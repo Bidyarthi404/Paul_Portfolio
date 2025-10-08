@@ -28,64 +28,68 @@
 
     /* Profile Card */
     .profile-card {
-      background: rgba(0, 40, 30, 0.85);
-      color: white;
-      width: 260px;
-      border-radius: 20px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      margin-left: 60px;
+    background: rgba(0, 40, 30, 0.85);
+    color: white;
+    width: 320px;              /* Increased from 260px */
+    border-radius: 24px;       /* Slightly more rounded */
+    padding: 40px 25px;        /* Increased padding */
+    text-align: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+    margin-left: 60px;
     }
 
+    /* Profile Image */
     .profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid white;
-      margin-bottom: 15px;
+    width: 130px;              /* Increased from 100px */
+    height: 130px;             /* Increased from 100px */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;   /* Slightly thicker border */
+    margin-bottom: 20px;
     }
 
+    /* Name Styling */
     .name {
-      margin: 5px 0 0;
-      font-size: 18px;
-      font-weight: 600;
+    margin: 8px 0 0;
+    font-size: 20px;           /* Slightly larger text */
+    font-weight: 600;
     }
 
     .native-name {
-      margin: 0;
-      font-size: 16px;
-      font-weight: 500;
+    margin: 2px 0 0;
+    font-size: 18px;           /* Slightly larger */
+    font-weight: 500;
     }
 
     .role {
-      font-size: 14px;
-      margin-top: 10px;
-      color: #ccc;
+    font-size: 15px;
+    margin-top: 12px;
+    color: #ccc;
     }
 
     .org {
-      font-size: 14px;
-      color: #aaa;
+    font-size: 15px;
+    color: #aaa;
     }
 
+    /* Social Icons */
     .social-icons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     }
 
     .social-icons a {
-      color: white;
-      font-size: 18px;
-      transition: color 0.3s;
+    color: white;
+    font-size: 20px;           /* Slightly bigger icons */
+    transition: color 0.3s;
     }
 
     .social-icons a:hover {
-      color: #00ffcc;
+    color: #00ffcc;
     }
+
 
     /* Main content beside the card */
     .main-content {
@@ -112,7 +116,7 @@
     <img src="image/paul.jpg" alt="Profile Photo" class="profile-img">
 
     <h3 class="name">Bidyarthi Paul</h3>
-    <h4 class="native-name">বিদ্যার্থী পাল</h4>
+    <!-- <h4 class="native-name">বিদ্যার্থী পাল</h4> -->
     <p class="role">NLP researcher | Adjunct Lecturer</p>
     <p class="org">Southeast University</p>
 
