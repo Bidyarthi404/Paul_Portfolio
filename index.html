@@ -293,6 +293,41 @@
     text-decoration: underline;
     }
 
+    #experience {
+    padding: 40px 0;
+    color: white;
+    }
+
+    #experience h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    }
+
+    #experience h3 {
+    font-size: 1.4rem;
+    color: #4db8ff;
+    margin-bottom: 15px;
+    }
+
+    .exp-item {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    }
+
+    .exp-item ul {
+    margin: 6px 0 0 20px;
+    padding: 0;
+    list-style-type: disc;
+    }
+
+    .exp-date {
+    float: right;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    }
+
+
 
 
 
@@ -433,7 +468,7 @@
             <div class="edu-date">2020 – 2024</div>
             <h3>Ahsanullah University of Science and Technology</h3>
             <p><strong>B.Sc. in Computer Science and Engineering</strong></p>
-            <p>CGPA: 3.882 / 4.00</p>
+            <p>CGPA: 3.882 / 4.00 (Ranked 2nd)</p>
             <p>
             Bachelor Thesis: 
             <a href="https://github.com/Bidyarthi404/Thesis-Book-PDF/blob/master/Thesis_Defence_BOOK%20(Group_4502).pdf" target="_blank" class="edu-link">
@@ -460,14 +495,45 @@
         </section>
 
 
-      <!-- Experience Section -->
-      <div id="experience" class="section">
-        <h2>Experience</h2>
-        <p><strong>Adjunct Lecturer</strong><br>Southeast University<br>2025 - Present</p>
-        <p><strong>Computer Science Teacher</strong><br>Mastermind English Medium School<br>2025 - Present</p>
-        <p><strong>Research Mentor</strong><br>Articulated Research Institute for Scientific Excellence<br>2025 - Present</p>
-        <p><strong>Research Assistant</strong><br>Articulated Research Institute for Scientific Excellence<br>2024</p>
-      </div>
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+        <h2>💼 Experience</h2>
+
+        <h3 style="margin-top: 25px;">Professional Experience</h3>
+
+        <div class="exp-item">
+            <strong>Adjunct Lecturer</strong> <span class="exp-date">Feb 2025 – Present</span><br>
+            Southeast University, Tejgaon, Dhaka, Bangladesh<br>
+            <em>Courses:</em> C, Algorithm, Digital Logic Design, Data Communication
+        </div>
+
+        <div class="exp-item">
+            <strong>Computer Science Teacher</strong> <span class="exp-date">Jan 2025 – Present</span><br>
+            Mastermind English Medium School, Uttara, Dhaka, Bangladesh<br>
+            <em>Courses:</em> AI Fundamentals, Python, Database
+        </div>
+
+        <h3 style="margin-top: 30px;">Research Experience</h3>
+
+        <div class="exp-item">
+            <strong>Research Mentor</strong> <span class="exp-date">Jan 2025 – Present</span><br>
+            Articulated Research Institute for Scientific Excellence (A.R.i.S.E.), Dhaka, Bangladesh<br>
+            <ul>
+            <li>Developing the <strong>Bengali Regional Hate Speech Dataset</strong> and conducting model evaluation of BERT-based and large language models (LLMs).</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <strong>Research Assistant</strong> <span class="exp-date">2024</span><br>
+            Articulated Research Institute for Scientific Excellence (A.R.i.S.E.), Dhaka, Bangladesh
+        </div>
+
+        <!-- Timeline Chart -->
+        <div style="margin-top: 50px;">
+            <canvas id="experienceTimeline" height="300"></canvas>
+        </div>
+        </section>
+
 
       <!-- Research Section -->
       <div id="research" class="section">
@@ -491,12 +557,63 @@
     </div>
   </div>
 
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(s => s.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('experienceTimeline').getContext('2d');
+  
+  const data = {
+    labels: ['Adjunct Lecturer', 'Computer Science Teacher', 'Research Mentor', 'Research Assistant'],
+    datasets: [
+      {
+        label: 'Experience Timeline',
+        data: [
+          { x: ['2025-02', '2025-12'], y: 'Adjunct Lecturer' },
+          { x: ['2025-01', '2025-12'], y: 'Computer Science Teacher' },
+          { x: ['2025-01', '2025-12'], y: 'Research Mentor' },
+          { x: ['2024-01', '2024-12'], y: 'Research Assistant' }
+        ],
+        backgroundColor: 'rgba(255,255,255,0.3)',
+        borderColor: 'rgba(255,255,255,0.5)',
+        borderWidth: 1,
+        borderRadius: 6,
+        barPercentage: 0.6,
+      }
+    ]
+  };
+
+  const config = {
+    type: 'bar',
+    data,
+    options: {
+      indexAxis: 'y',
+      scales: {
+        x: {
+          type: 'time',
+          time: {
+            unit: 'month',
+            tooltipFormat: 'MMM yyyy'
+          },
+          grid: { color: 'rgba(255,255,255,0.1)' },
+          ticks: { color: 'white' }
+        },
+        y: {
+          grid: { color: 'rgba(255,255,255,0.1)' },
+          ticks: { color: 'white', font: { size: 13 } }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          titleColor: '#fff',
+          bodyColor: '#fff'
+        }
+      }
     }
-  </script>
+  };
+
+  new Chart(ctx, config);
+</script>
+
 </body>
 </html>
