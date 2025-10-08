@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
+  <title>Bidyarthi Paul | AI Researcher & Lecturer</title>
   <style>
-    /* ---------- BASIC STYLES ---------- */
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
@@ -22,18 +21,19 @@
     }
 
     header h1 {
-      margin-bottom: 0.3rem;
+      margin: 0;
+      font-size: 2.2rem;
     }
 
     header p {
-      color: #ccc;
-      font-size: 1rem;
+      color: #aaa;
+      font-size: 1.1rem;
     }
 
     nav {
       background: #161b22;
       text-align: center;
-      padding: 0.5rem;
+      padding: 0.6rem;
     }
 
     nav a {
@@ -53,7 +53,13 @@
       margin: auto;
     }
 
-    .project {
+    h2 {
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 5px;
+      color: #0366d6;
+    }
+
+    .project, .publication, .experience, .dataset {
       background: #fff;
       padding: 1rem;
       border-radius: 10px;
@@ -61,9 +67,8 @@
       margin-bottom: 1.5rem;
     }
 
-    .project h3 {
+    .project h3, .publication h3, .experience h3, .dataset h3 {
       margin-top: 0;
-      color: #0366d6;
     }
 
     footer {
@@ -78,85 +83,122 @@
       color: #58a6ff;
       text-decoration: none;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      section {
-        padding: 1rem;
-      }
-    }
   </style>
 </head>
-<body>
 
-  <!-- Header -->
+<body>
   <header>
-    <h1>Your Name</h1>
-    <p>AI Researcher | Data Scientist | Developer</p>
+    <h1>Bidyarthi Paul</h1>
+    <p>AI Researcher | Lecturer | Data Scientist</p>
+    <p>
+      📧 <a href="mailto:bidyarthipaul01@gmail.com" style="color:#58a6ff;">bidyarthipaul01@gmail.com</a> |
+      📞 +8801970307986
+    </p>
+    <p>
+      <a href="https://github.com/Bidyarthi404" style="color:#58a6ff;">GitHub</a> |
+      <a href="https://www.linkedin.com/in/bidyarthi-paul" style="color:#58a6ff;">LinkedIn</a> |
+      <a href="https://orcid.org/0009-0003-5892-5786" style="color:#58a6ff;">ORCID</a> |
+      <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" style="color:#58a6ff;">ResearchGate</a>
+    </p>
   </header>
 
-  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
-    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#datasets">Datasets</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
+    <h2>About</h2>
     <p>
-      Hello! I'm <strong>Your Name</strong>, a passionate developer and researcher 
-      specializing in AI, NLP, and data analysis. I love creating intelligent systems, 
-      analyzing datasets, and contributing to open-source projects.
+      I am an AI researcher and educator passionate about advancing Natural Language Processing (NLP), Large Language Models (LLMs), and low-resource language understanding. 
+      I currently teach and mentor in academia while developing datasets and frameworks that empower Bengali AI research.
+    </p>
+    <p><strong>Education:</strong> B.Sc. in Computer Science and Engineering, Ahsanullah University of Science and Technology (CGPA: 3.88/4.00)</p>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="experience">
+      <h3>Adjunct Lecturer</h3>
+      <p><strong>Southeast University</strong> — Feb 2025 – Present</p>
+      <p>Courses: C, Algorithm, Digital Logic Design, Data Communication</p>
+    </div>
+
+    <div class="experience">
+      <h3>Computer Science Teacher</h3>
+      <p><strong>Mastermind English Medium School</strong> — Jan 2025 – Present</p>
+      <p>Courses: AI Fundamentals, Python, Database</p>
+    </div>
+
+    <div class="experience">
+      <h3>Research Mentor</h3>
+      <p><strong>A.R.i.S.E., Dhaka</strong> — Jan 2025 – Present</p>
+      <p>Leading NLP research on regional language modeling and dataset creation for Bengali hate speech detection and NER.</p>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research Interests</h2>
+    <p>
+      Natural Language Processing (NLP), Bangla Mathematical Reasoning, Regional Dialects, Low-Resource Languages, 
+      Large Language Models (LLMs), Vision-Language Models (VLMs), Machine Learning, Deep Learning.
     </p>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="publications">
+    <h2>Selected Publications</h2>
 
-    <div class="project">
-      <h3>🔹 Harmful Meme Detection Framework</h3>
-      <p>
-        A Bengali multimodal framework to detect harmful memes and identify their targets using vision-language models.
-      </p>
-      <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+    <div class="publication">
+      <h3>Leveraging Bengali Math Word Problem Solving with Chain of Thoughts</h3>
+      <p><em>ACM Transactions on Asian and Low-Resource Language Information Processing, 2025</em></p>
+      <a href="https://doi.org/10.48550/arXiv.2505.21354">[DOI]</a>
     </div>
 
-    <div class="project">
-      <h3>🔹 NYC Taxi Data Analysis</h3>
-      <p>
-        Comparative geospatial and temporal analysis of taxi and delivery trip data to explore urban mobility patterns.
-      </p>
-      <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+    <div class="publication">
+      <h3>Improving Bangla Regional Dialect Detection Using BERT, LLMs, and XAI</h3>
+      <p><em>IEEE COMPAS, 2024</em></p>
+      <a href="https://doi.org/10.1109/COMPAS60761.2024.10796843">[DOI]</a>
     </div>
 
-    <div class="project">
-      <h3>🔹 Bangla Math Problem Solver</h3>
-      <p>
-        Transformer-based model that converts Bengali math word problems into equations automatically.
-      </p>
-      <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+    <div class="publication">
+      <h3>ANCHOLIK-NER: A Benchmark Dataset for Bangla Regional Named Entity Recognition</h3>
+      <p><em>PLOS One, Under Review (2025)</em></p>
+      <a href="https://doi.org/10.48550/arXiv.2502.11198">[Preprint]</a>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <section id="datasets">
+    <h2>Datasets</h2>
+
+    <div class="dataset">
+      <h3>ANCHOLIK-NER</h3>
+      <p><a href="https://data.mendeley.com/datasets/gbkszkt8z3/3">Bangla Regional NER Dataset (2024)</a></p>
+    </div>
+
+    <div class="dataset">
+      <h3>BIDWESH</h3>
+      <p><a href="https://data.mendeley.com/datasets/bpkrvf882k/1">Bangla Regional Hate Speech Dataset (2024)</a></p>
+    </div>
+
+    <div class="dataset">
+      <h3>SOMADHAN</h3>
+      <p><a href="https://data.mendeley.com/datasets/34bs5cxk9j/1">Bengali Complex Math Reasoning Dataset (2025)</a></p>
+    </div>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
-    <p>
-      📧 Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br />
-      💼 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a><br />
-      🐙 GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
-    </p>
+    <p>📧 <a href="mailto:bidyarthipaul01@gmail.com">bidyarthipaul01@gmail.com</a></p>
+    <p>💼 <a href="https://www.linkedin.com/in/bidyarthi-paul">LinkedIn</a> | 🐙 <a href="https://github.com/Bidyarthi404">GitHub</a></p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    © 2025 Your Name | Built with ❤️ using <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+    © 2025 Bidyarthi Paul | Built with ❤️ using <a href="https://pages.github.com/">GitHub Pages</a>
   </footer>
-
 </body>
 </html>
