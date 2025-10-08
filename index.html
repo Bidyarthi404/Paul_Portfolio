@@ -74,24 +74,22 @@
 
     .social-icons {
         display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
+        gap: 15px;
         justify-content: center;
         align-items: center;
     }
 
     .social-icons a {
+        color: white; /* icon color */
+        font-size: 20px;
         text-decoration: none;
-        color: #333;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
+        transition: transform 0.2s ease;
     }
 
     .social-icons a:hover {
-        color: #0073b1; /* LinkedIn color example */
+        transform: scale(1.2);
     }
+
 
 
     /* Main content beside the card */
@@ -124,41 +122,47 @@
     <p class="org">Southeast University</p>
 
     <div class="social-icons">
-        <!-- Email -->
-        <a href="mailto:youremail@example.com">
-            <i class="fa-solid fa-envelope"></i> Email
+        <a href="mailto:youremail@example.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
         </a>
 
-        <!-- Phone -->
-        <a href="tel:+880123456789">
-            <i class="fa-solid fa-phone"></i> +880123456789
+        <a href="tel:+880123456789" target="_blank">
+            <i class="fa-solid fa-phone"></i>
         </a>
 
-        <!-- GitHub -->
         <a href="https://github.com/Bidyarthi404" target="_blank">
-            <i class="fa-brands fa-github"></i> Github
+            <i class="fa-brands fa-github"></i>
         </a>
 
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/bidyarthi-paul" target="_blank">
-            <i class="fa-brands fa-linkedin"></i> Linkedin
+            <i class="fa-brands fa-linkedin"></i>
         </a>
 
-        <!-- ORCID -->
         <a href="https://orcid.org/0009-0003-5892-5786" target="_blank">
-            <i class="fa-solid fa-user"></i> ORCID
+            <i class="fa-solid fa-user"></i>
         </a>
 
-        <!-- ResearchGate -->
         <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" target="_blank">
-            <i class="fa-solid fa-graduation-cap"></i> ResearchGate
+            <i class="fa-solid fa-graduation-cap"></i>
         </a>
 
-        <!-- Scopus -->
+        <a href="https://scholar.google.com/citations?user=your-google-scholar-id" target="_blank">
+            <i class="fa-brands fa-google"></i>
+        </a>
+
         <a href="https://www.scopus.com/authid/detail.uri?authorId=your-scopus-id" target="_blank">
-            <i class="fa-solid fa-chart-line"></i> Scopus
+            <i class="fa-solid fa-chart-line"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
         </a>
     </div>
+
 
   </div>
 
