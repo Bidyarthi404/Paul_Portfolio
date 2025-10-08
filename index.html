@@ -47,31 +47,17 @@
       border: 1px solid rgba(255,255,255,0.04);
     }
 
-    /* decorative low-poly overlays */
-    .hero::before, .hero::after{
+    /* semi-transparent overlay for text readability */
+    .hero::before{
       content:"";
       position:absolute;
       inset:0;
-      pointer-events:none;
-      mix-blend-mode:overlay;
-      opacity:0.25;
-    }
-    .hero::before{
-      background:
-        linear-gradient(120deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 30%),
-        linear-gradient(60deg, rgba(0,0,0,0.06), rgba(0,0,0,0));
-      clip-path: polygon(0 0, 60% 0, 30% 100%, 0% 100%);
-      transform: scale(1.4) rotate(6deg);
-    }
-    .hero::after{
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 40%),
-        linear-gradient(200deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
-      clip-path: polygon(40% 0, 100% 0, 100% 70%, 70% 100%, 40% 100%);
-      transform: scale(1.06) rotate(-6deg);
+      background:rgba(0,0,0,0.35);
+      border-radius: var(--radius);
+      z-index:0;
     }
 
-    /* two-column layout */
+    /* layout inside hero */
     .layout{
       display:flex;
       gap:28px;
@@ -127,7 +113,9 @@
       font-weight:600;
       font-size:14px;
       border:1px solid rgba(255,255,255,0.03);
+      transition:0.25s;
     }
+    .socials a:hover{background:rgba(255,255,255,0.18)}
 
     /* right column (content) */
     .right{flex:1;}
@@ -162,7 +150,9 @@
       font-weight:600;
       margin-top:14px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition:0.3s;
     }
+    .btn-download:hover{background:rgba(255,255,255,0.18);}
     .btn-download svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35));}
 
     /* two-column grid inside right: Interests & Education */
@@ -196,7 +186,6 @@
       body{padding:20px;}
     }
 
-    /* small helper styles for icons/text inside the card */
     .small-muted{font-size:0.92rem; color:var(--muted)}
   </style>
 </head>
@@ -208,8 +197,7 @@
       <div class="layout">
         <!-- LEFT: Avatar + links -->
         <div class="left">
-          <!-- replace profile.jpg with your image -->
-          <img src="profile.jpg" alt="Bidyarthi Paul" class="avatar" />
+          <img src="image/paul.jpg" alt="Bidyarthi Paul" class="avatar" />
           <div class="name">Bidyarthi Paul</div>
           <div class="title">AI Researcher • Lecturer</div>
 
@@ -217,7 +205,7 @@
             <a href="https://github.com/Bidyarthi404" target="_blank" title="GitHub">GH</a>
             <a href="https://www.linkedin.com/in/bidyarthi-paul" target="_blank" title="LinkedIn">in</a>
             <a href="https://orcid.org/0009-0003-5892-5786" target="_blank" title="ORCID">iD</a>
-            <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" target="_blank" title="ResearchGate">RG</a>
+            <a href="https://www.researchgate.net/profile/Bidyarthi-Paul" target="_blank" title="ResearchGate">RG</a>
           </div>
         </div>
 
@@ -231,24 +219,19 @@
               </div>
             </div>
 
-            <!-- Download CV -->
             <div>
-              <!-- Put your CV file in the repo root named "Bidyarthi_Paul_CV.pdf" -->
               <a class="btn-download" href="Bidyarthi_Paul_CV.pdf" download>
-                <!-- mini download icon (svg) -->
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <path d="M12 3v11" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M8 11l4 4 4-4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M21 21H3" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 Download CV
               </a>
-
               <div class="meta">AUST — B.Sc. in CSE (CGPA: 3.882/4.00)</div>
             </div>
           </div>
 
-          <!-- Interests & Education -->
           <div class="grid" aria-hidden="false">
             <div class="card">
               <h4>Interests</h4>
@@ -269,7 +252,6 @@
             </div>
           </div>
 
-          <!-- optional short publications / datasets line -->
           <div style="margin-top:18px; color:rgba(255,255,255,0.9); font-size:0.95rem">
             <strong>Selected publications:</strong> <span class="small-muted">ACM TALLIP (2025) — Bengali math MWP chain-of-thought; IEEE COMPAS (2024) — Bangla dialect detection.</span>
           </div>
