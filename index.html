@@ -3,709 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bidyarthi Paul - Portfolio</title>
+    <title>Paul Portfolio</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --light-text: #7f8c8d;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f9f9f9;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .svg-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 2rem;
         }
 
-        /* Header Styles */
         header {
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), var(--bg-svg);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('C:\Users\Asus\Documents\GitHub\Paul_Portfolio\image\stacked-peaks.svg');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin: 0 auto 20px;
-            background-color: #ddd;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: var(--primary-color);
+            padding: 1rem 0;
+            margin-bottom: 3rem;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: var(--light-color);
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fdbb2d;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary-color);
-            color: white;
+            background: #fdbb2d;
+            color: #1a2a6c;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: var(--transition);
-            margin: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .btn:hover {
-            background-color: #2980b9;
             transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary-color);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 15px auto;
-        }
-
-        .section-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        #about {
-            background-color: white;
-        }
-
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 30px;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        /* Interests Section */
-        #interests {
-            background-color: var(--light-color);
-        }
-
-        .interests-grid {
+        .skills {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .interest-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
             text-align: center;
-            transition: var(--transition);
+            transition: transform 0.3s;
         }
 
-        .interest-card:hover {
+        .skill-card:hover {
             transform: translateY(-10px);
         }
 
-        .interest-icon {
-            font-size: 40px;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
+        .skill-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fdbb2d;
         }
 
-        /* Education Section */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+        .skill-card h3 {
+            margin-bottom: 1rem;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--light-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .timeline-date {
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: var(--secondary-color);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-
-        /* Experience Section */
-        #experience {
-            background-color: white;
-        }
-
-        .experience-item {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .experience-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-        }
-
-        .experience-date {
-            color: var(--light-text);
-            font-weight: bold;
-        }
-
-        .experience-company {
-            font-style: italic;
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-
-        /* Publications Section */
-        #publications {
-            background-color: var(--light-color);
-        }
-
-        .publication-item {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .publication-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .publication-authors {
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-
-        .publication-venue {
-            color: var(--light-text);
-            margin-bottom: 10px;
-        }
-
-        .publication-links a {
-            margin-right: 15px;
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        /* Skills Section */
-        #skills {
-            background-color: white;
-        }
-
-        .skills-container {
+        .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .skill-category {
-            background-color: var(--light-color);
-            padding: 20px;
-            border-radius: 10px;
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
         }
 
-        .skill-category h3 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        .project-card:hover {
+            transform: translateY(-10px);
         }
 
-        .skill-list {
-            list-style-type: none;
-        }
-
-        .skill-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .skill-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .contact-item {
+        .project-img {
+            height: 200px;
+            background: linear-gradient(45deg, #1a2a6c, #b21f1f);
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
+            font-size: 3rem;
         }
 
-        .contact-icon {
-            margin-right: 10px;
-            color: var(--secondary-color);
+        .project-content {
+            padding: 1.5rem;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact {
             text-align: center;
-            padding: 20px 0;
+            padding: 3rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 3rem;
         }
 
-        /* Responsive Design */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         @media (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
+            header {
+                flex-direction: column;
+                gap: 1rem;
             }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+            
+            nav ul {
+                gap: 1rem;
             }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item::after {
-                left: 21px;
-            }
-
-            .timeline-item:nth-child(odd)::after,
-            .timeline-item:nth-child(even)::after {
-                left: 21px;
-            }
-
-            h1 {
+            
+            .hero h1 {
                 font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="profile-img">BP</div>
-            <h1>Bidyarthi Paul</h1>
-            <p class="tagline">Researcher in Natural Language Processing & AI</p>
-            <p>Passionate about advancing AI technologies for low-resource languages, particularly Bengali NLP</p>
-            <div class="header-buttons">
-                <a href="#contact" class="btn">Get In Touch</a>
-                <a href="#" class="btn btn-outline" id="download-cv">Download CV</a>
-            </div>
-        </div>
-    </header>
+    <!-- SVG Background -->
+    <div class="svg-background">
+    <img src="C:\Users\Asus\Documents\GitHub\Paul_Portfolio\image\stacked-peaks.svg" alt="Background" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Bidyarthi Paul is a researcher specializing in Natural Language Processing (NLP) with a focus on low-resource languages, particularly Bengali. His research interests include mathematical reasoning in Bengali, regional dialects, and developing AI solutions for under-resourced languages.</p>
-                    <p>He has contributed to several significant research projects and publications in the field of NLP, focusing on Bengali language processing, hate speech detection, and mathematical problem solving.</p>
-                    <p>Currently, he works as an Adjunct Lecturer at Southeast University and as a Computer Science Teacher at Mastermind English Medium School, while continuing his research in NLP.</p>
-                </div>
-                <div class="about-image">
-                    <!-- Placeholder for profile image -->
-                    <div style="width: 300px; height: 300px; background-color: #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <span style="font-size: 48px; color: #666;">Profile Image</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <header>
+            <div class="logo">Paul Portfolio</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Interests Section -->
-    <section id="interests">
-        <div class="container">
-            <h2 class="section-title">Research Interests</h2>
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <div class="interest-icon">NLP</div>
-                    <h3>Natural Language Processing</h3>
-                    <p>Focus on Bengali and low-resource languages</p>
+        <section class="hero" id="home">
+            <h1>Hi, I'm Paul</h1>
+            <p>I'm a passionate web developer with expertise in creating modern, responsive websites and applications. Welcome to my portfolio!</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills">
+                <div class="skill-card">
+                    <i>💻</i>
+                    <h3>Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Vue.js</p>
                 </div>
-                <div class="interest-card">
-                    <div class="interest-icon">LLM</div>
-                    <h3>Large Language Models</h3>
-                    <p>Development and application for regional languages</p>
+                <div class="skill-card">
+                    <i>⚙️</i>
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Express, MongoDB, SQL</p>
                 </div>
-                <div class="interest-card">
-                    <div class="interest-icon">Math</div>
-                    <h3>Mathematical Reasoning</h3>
-                    <p>Bengali math word problem solving</p>
+                <div class="skill-card">
+                    <i>🎨</i>
+                    <h3>UI/UX Design</h3>
+                    <p>Figma, Adobe XD, User Research</p>
                 </div>
-                <div class="interest-card">
-                    <div class="interest-icon">CV</div>
-                    <h3>Computer Vision</h3>
-                    <p>Multimodal AI applications</p>
+                <div class="skill-card">
+                    <i>📱</i>
+                    <h3>Mobile Development</h3>
+                    <p>React Native, Flutter, PWA</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2020–2024</div>
-                        <h3>Bachelor of Science in Computer Science and Engineering</h3>
-                        <p>Ahsanullah University of Science and Technology, Tejgaon, Dhaka</p>
-                        <p>CGPA: 3.882/4.00</p>
-                        <p>Thesis: Bengali Math Word Problem Solving with Chain of Thought Reasoning</p>
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-img">🌐</div>
+                    <div class="project-content">
+                        <h3>E-commerce Website</h3>
+                        <p>A fully responsive e-commerce platform with payment integration and admin dashboard.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2017–2019</div>
-                        <h3>Higher Secondary School Certificate</h3>
-                        <p>Dhaka Residential Model College, Mohammadpur, Dhaka</p>
-                        <p>GPA: 5.00/5.00</p>
+                <div class="project-card">
+                    <div class="project-img">📊</div>
+                    <div class="project-content">
+                        <h3>Data Visualization Tool</h3>
+                        <p>Interactive data visualization dashboard with real-time updates and filtering options.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2015–2017</div>
-                        <h3>Secondary School Certificate</h3>
-                        <p>Scholars' School and College, Dhanmondi, Dhaka</p>
-                        <p>GPA: 5.00/5.00</p>
+                <div class="project-card">
+                    <div class="project-img">📱</div>
+                    <div class="project-content">
+                        <h3>Fitness Tracking App</h3>
+                        <p>Mobile application for tracking workouts, nutrition, and progress with social features.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="section-content">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Adjunct Lecturer</h3>
-                        <div class="experience-date">Feb 2025 – Present</div>
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact">
+                <p>Interested in working together? Feel free to reach out!</p>
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name">
                     </div>
-                    <p class="experience-company">Southeast University, Tejgaon, Dhaka, Bangladesh</p>
-                    <p>Courses: C, Algorithm, Digital Logic Design, Data Communication</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Computer Science Teacher</h3>
-                        <div class="experience-date">Jan 2025 – Present</div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your Email">
                     </div>
-                    <p class="experience-company">Mastermind English Medium School, Uttara, Dhaka, Bangladesh</p>
-                    <p>Courses: AI Fundamentals, Python, Database</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Research Mentor</h3>
-                        <div class="experience-date">Jan 2025 – Present</div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Your Message"></textarea>
                     </div>
-                    <p class="experience-company">Articulated Research Institute for Scientific Excellence (A.R.i.S.E.), Dhaka, Bangladesh</p>
-                    <p>Developed the Bengali Regional Hate Speech NLP dataset and conducted model evaluation of deep learning approaches, including BERT-based and large language models (LLMs).</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Research Assistant</h3>
-                        <div class="experience-date">Mar 2024 – Dec 2024</div>
-                    </div>
-                    <p class="experience-company">Articulated Research Institute for Scientific Excellence (A.R.i.S.E.), Dhaka, Bangladesh</p>
-                    <p>Advisor: Tashreef Muhammad</p>
-                    <p>Developed a Bengali Regional Named Entity Recognition (NER) dataset along with its evaluation pipeline, and proposed a large language model (LLM) prompting pipeline for regional language detection.</p>
+                    <button type="submit" class="btn">Send Message</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Publications Section -->
-    <section id="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="section-content">
-                <div class="publication-item">
-                    <h3 class="publication-title">Leveraging Bengali Math Word Problem Solving with Chain of Thoughts</h3>
-                    <p class="publication-authors">B. Paul, J.J. Era, M.R. Zim, T.S. Aothoi, F.M. Shah</p>
-                    <p class="publication-venue">ACM Transactions on Asian and Low-Resource Language Information Processing, 2025 (Journal)</p>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.48550/arXiv.2505.21354">DOI</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <h3 class="publication-title">Improving Bangla Regional Dialect Detection Using BERT, LLMs, and XAI</h3>
-                    <p class="publication-authors">B. Paul, F.F. Preotee, S. Sarker, T. Muhammad</p>
-                    <p class="publication-venue">2024 IEEE International Conference on Computing, Applications and Systems (COMPAS)</p>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1109/COMPAS60761.2024.10796843">DOI</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <h3 class="publication-title">Empowering Bengali Education with AI: Solving Bengali Math Word Problems through Transformer Models</h3>
-                    <p class="publication-authors">JJ Era*, B. Paul*, TS Aothoi, MR Zim, FM Shah</p>
-                    <p class="publication-venue">2024 International Conference on Computer and Information Technology (ICCIT)</p>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1109/ICCIT64611.2024.11022154">DOI</a>
-                    </div>
-                </div>
-                <!-- Add more publications as needed -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming & Foundations</h3>
-                    <ul class="skill-list">
-                        <li>C/C++</li>
-                        <li>Python</li>
-                        <li>Git</li>
-                        <li>Probability & Statistics</li>
-                        <li>Linear Algebra</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Deep Learning Tools</h3>
-                    <ul class="skill-list">
-                        <li>Keras</li>
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>scikit-learn</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Developer Tools</h3>
-                    <ul class="skill-list">
-                        <li>Google Colab</li>
-                        <li>VS Code</li>
-                        <li>Overleaf (LaTeX)</li>
-                        <li>NetBeans</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases & Office</h3>
-                    <ul class="skill-list">
-                        <li>MS SQL Server</li>
-                        <li>MySQL</li>
-                        <li>MS Office Suite</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <span>bidyarthipaul01@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📱</span>
-                    <span>+880 1970307986</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
-                    <a href="https://github.com/Bidyarthi404" style="color: white;">GitHub</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
-                    <a href="https://www.linkedin.com/in/bidyarthi-paul" style="color: white;">LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
-                    <a href="https://orcid.org/0009-0003-5892-5786" style="color: white;">ORCID</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
-                    <a href="https://scholar.google.com/citations?user=tcZ35mEAAAAJ&hl=en" style="color: white;">Google Scholar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Bidyarthi Paul. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Simple script for CV download button
-        document.getElementById('download-cv').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('CV download functionality would be implemented here. For now, you can use the LaTeX file you provided.');
-        });
-    </script>
+        <footer>
+            <p>&copy; 2023 Paul Portfolio. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
