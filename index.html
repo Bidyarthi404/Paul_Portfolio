@@ -72,22 +72,25 @@
     color: #aaa;
     }
 
-    /* Social Icons */
     .social-icons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
     }
 
     .social-icons a {
-    color: white;
-    font-size: 20px;           /* Slightly bigger icons */
-    transition: color 0.3s;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
     .social-icons a:hover {
-    color: #00ffcc;
+        color: #0073b1; /* LinkedIn color example */
     }
 
 
@@ -116,18 +119,47 @@
     <img src="image/paul.jpg" alt="Profile Photo" class="profile-img">
 
     <h3 class="name">Bidyarthi Paul</h3>
-    <!-- <h4 class="native-name">বিদ্যার্থী পাল</h4> -->
+    <h4 class="native-name">বিদ্যার্থী পাল</h4>
     <p class="role">NLP researcher | Adjunct Lecturer</p>
     <p class="org">Southeast University</p>
 
     <div class="social-icons">
-      <a href="#"><i class="fa-solid fa-envelope"></i></a>
-      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-github"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="#"><i class="fa-brands fa-google"></i></a>
+        <!-- Email -->
+        <a href="mailto:youremail@example.com">
+            <i class="fa-solid fa-envelope"></i> Email
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+880123456789">
+            <i class="fa-solid fa-phone"></i> +880123456789
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Bidyarthi404" target="_blank">
+            <i class="fa-brands fa-github"></i> Github
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/bidyarthi-paul" target="_blank">
+            <i class="fa-brands fa-linkedin"></i> Linkedin
+        </a>
+
+        <!-- ORCID -->
+        <a href="https://orcid.org/0009-0003-5892-5786" target="_blank">
+            <i class="fa-solid fa-user"></i> ORCID
+        </a>
+
+        <!-- ResearchGate -->
+        <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" target="_blank">
+            <i class="fa-solid fa-graduation-cap"></i> ResearchGate
+        </a>
+
+        <!-- Scopus -->
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=your-scopus-id" target="_blank">
+            <i class="fa-solid fa-chart-line"></i> Scopus
+        </a>
     </div>
+
   </div>
 
   <!-- Main Page Content -->
