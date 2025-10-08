@@ -235,6 +235,65 @@
     line-height: 1.6;
     }
 
+    #education {
+    padding: 50px 0;
+    text-align: center;
+    background: transparent;
+    }
+
+    #education h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    }
+
+    /* Card styling (same as news) */
+    .edu-card {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1); /* frosted glass */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .edu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .edu-date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    }
+
+    .edu-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    }
+
+    .edu-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    }
+
+    .edu-link {
+    color: #4db8ff;
+    text-decoration: none;
+    }
+
+    .edu-link:hover {
+    text-decoration: underline;
+    }
+
+
 
 
     /* Responsive design */
@@ -365,34 +424,41 @@
 
 
 
-      <!-- Education Section -->
-      <div id="education" class="section">
-        <h2>Education</h2>
-        <div style="margin-bottom: 20px;">
-          <strong>Ahsanullah University of Science and Technology</strong><br>
-          Bachelor of Science (B.Sc.) in Computer Science and Engineering<br>
-          Duration: 2020 – 2024<br>
-          CGPA: 3.882/4.00<br>
-          Bachelor Thesis: 
-          <a href="https://github.com/Bidyarthi404/Thesis-Book-PDF/blob/master/Thesis_Defence_BOOK%20(Group_4502).pdf" target="_blank" style="color: #4db8ff;">
-            Bengali Math Word Problem Solving with Chain of Thought Reasoning
-          </a>
+    <!-- Education Section -->
+    <section id="education" class="section">
+    <h2>🎓 Education</h2>
+
+        <!-- Education Item 1 -->
+        <div class="edu-card">
+            <div class="edu-date">2020 – 2024</div>
+            <h3>Ahsanullah University of Science and Technology</h3>
+            <p><strong>B.Sc. in Computer Science and Engineering</strong></p>
+            <p>CGPA: 3.882 / 4.00</p>
+            <p>
+            Bachelor Thesis: 
+            <a href="https://github.com/Bidyarthi404/Thesis-Book-PDF/blob/master/Thesis_Defence_BOOK%20(Group_4502).pdf" target="_blank" class="edu-link">
+                Bengali Math Word Problem Solving with Chain of Thought Reasoning
+            </a>
+            </p>
         </div>
 
-        <div style="margin-bottom: 20px;">
-          <strong>Dhaka Residential Model College</strong><br>
-          Higher Secondary School Certificate<br>
-          Duration: 2017 – 2019<br>
-          GPA: 5.00/5.00
+        <!-- Education Item 2 -->
+        <div class="edu-card">
+            <div class="edu-date">2017 – 2019</div>
+            <h3>Dhaka Residential Model College</h3>
+            <p><strong>Higher Secondary Certificate (HSC)</strong></p>
+            <p>GPA: 5.00 / 5.00</p>
         </div>
 
-        <div style="margin-bottom: 20px;">
-          <strong>Scholars' School and College</strong><br>
-          Secondary School Certificate<br>
-          Duration: 2015 – 2017<br>
-          GPA: 5.00/5.00
+        <!-- Education Item 3 -->
+        <div class="edu-card">
+            <div class="edu-date">2015 – 2017</div>
+            <h3>Scholars' School and College</h3>
+            <p><strong>Secondary School Certificate (SSC)</strong></p>
+            <p>GPA: 5.00 / 5.00</p>
         </div>
-      </div>
+        </section>
+
 
       <!-- Experience Section -->
       <div id="experience" class="section">
