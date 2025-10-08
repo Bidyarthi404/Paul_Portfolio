@@ -8,11 +8,9 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome (for social icons) -->
+  <!-- Font Awesome (for icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Font Awesome Link (Add in <head>) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- CSS -->
   <style>
     * {
@@ -99,7 +97,6 @@
       margin-top: 20px;
     }
 
-    /* Profile Image */
     .profile-img {
       width: 200px;
       height: 200px;
@@ -109,7 +106,6 @@
       margin-bottom: 20px;
     }
 
-    /* Name Styling */
     .name {
       margin: 8px 0 0;
       font-size: 30px;
@@ -135,22 +131,22 @@
     }
 
     .social-icons {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
     }
 
     .social-icons a {
-        color: white;
-        font-size: 20px;
-        text-decoration: none;
-        transition: transform 0.2s ease;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      transition: transform 0.2s ease;
     }
 
     .social-icons a:hover {
-        transform: scale(1.2);
+      transform: scale(1.2);
     }
 
     /* Main content beside the card */
@@ -192,18 +188,71 @@
       margin-bottom: 15px;
     }
 
+    /* --- Recent News Styling --- */
+    .news-item {
+      background: #f9fafb;
+      color: #111;
+      border-left: 4px solid #e11d48;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .news-date {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #1e293b;
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+
+    .news-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .news-desc {
+      color: #374151;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .news-tags .tag {
+      background: #e0e7ff;
+      color: #1d4ed8;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      margin-right: 6px;
+    }
+
+    .news-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
     /* Responsive design */
     @media (max-width: 900px) {
       .content-container {
         flex-direction: column;
         align-items: center;
       }
-      
+
       .profile-card {
         margin-left: 0;
         margin-bottom: 40px;
       }
-      
+
       .main-content {
         margin-left: 0;
         padding: 0 20px;
@@ -215,11 +264,11 @@
         flex-direction: column;
         gap: 15px;
       }
-      
+
       .nav-links {
         gap: 15px;
       }
-      
+
       .nav-links a {
         font-size: 14px;
       }
@@ -232,6 +281,7 @@
   <nav class="dashboard">
     <div class="logo" onclick="showSection('home')">Bidyarthi Paul</div>
     <div class="nav-links">
+      <a href="#" onclick="showSection('recent')">Recent</a>
       <a href="#" onclick="showSection('education')">Education</a>
       <a href="#" onclick="showSection('experience')">Experience</a>
       <a href="#" onclick="showSection('research')">Research</a>
@@ -246,156 +296,158 @@
       <img src="image/paul.jpg" alt="Profile Photo" class="profile-img">
       <h3 class="name">Bidyarthi Paul</h3>
       <h4 class="native-name">বিদ্যার্থী পাল</h4>
-      <p class="role">NLP researcher | Adjunct Lecturer</p>
+      <p class="role">NLP Researcher | Adjunct Lecturer</p>
       <p class="org">Southeast University</p>
 
       <div class="social-icons">
-        <a href="mailto:youremail@example.com" target="_blank">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="tel:+8801970307986" target="_blank">
-          <i class="fa-solid fa-phone"></i>
-        </a>
-        <a href="https://github.com/Bidyarthi404" target="_blank">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/bidyarthi-paul" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://orcid.org/0009-0003-5892-5786" target="_blank">
-          <i class="fa-solid fa-user"></i>
-        </a>
-        <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" target="_blank">
-          <i class="fa-solid fa-graduation-cap"></i>
-        </a>
-        <a href="https://scholar.google.com/citations?user=your-google-scholar-id" target="_blank">
-          <i class="fa-brands fa-google"></i>
-        </a>
-        <a href="https://www.scopus.com/authid/detail.uri?authorId=your-scopus-id" target="_blank">
-          <i class="fa-solid fa-chart-line"></i>
-        </a>
+        <a href="mailto:youremail@example.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+8801970307986" target="_blank"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://github.com/Bidyarthi404" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/bidyarthi-paul" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://orcid.org/0009-0003-5892-5786" target="_blank"><i class="fa-solid fa-user"></i></a>
+        <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://scholar.google.com/citations?user=tcZ35mEAAAAJ&hl=en" target="_blank"><i class="fa-brands fa-google"></i></a>
       </div>
     </div>
 
     <!-- Main Page Content -->
     <div class="main-content">
       <!-- Home Section -->
-        <div id="home" class="section active">
-            <!-- About Me -->
-            <h1>About Me</h1>
-            <p>
-                I am <strong>Bidyarthi Paul</strong>, a passionate Computer Science researcher dedicated to advancing Artificial Intelligence and Natural Language Processing (NLP), with a special focus on low-resource languages, particularly Bengali.
-            </p>
-            <p>
-                My research covers Bengali mathematical reasoning, regional dialect analysis, hate speech detection, and the development of large language models. I have contributed to numerous datasets and publications, aiming to bridge the gap between cutting-edge AI research and practical real-world solutions. Beyond research, I actively teach and mentor, inspiring the next generation of innovators in AI and data science.
-            </p>
+      <div id="home" class="section active">
+        <h1>About Me</h1>
+        <p>
+          I am <strong>Bidyarthi Paul</strong>, a passionate Computer Science researcher dedicated to advancing Artificial Intelligence and Natural Language Processing (NLP), with a special focus on low-resource languages, particularly Bengali.
+        </p>
+        <p>
+          My research covers Bengali mathematical reasoning, regional dialect analysis, hate speech detection, and the development of large language models. I have contributed to numerous datasets and publications, aiming to bridge the gap between cutting-edge AI research and real-world solutions. Beyond research, I actively teach and mentor, inspiring the next generation of innovators in AI and data science.
+        </p>
 
-            <!-- Download CV Button -->
-            <div style="text-align: left; margin-top: 20px;">
-                <a href="image/Bidyarthi_Paul_CV.pdf" download
-                style="background: gray; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa fa-download"></i> Download CV
-                </a>
-            </div>
-
-            <!-- Quote -->
-            <p style="font-style: italic; color: whitesmoke; text-align: center; margin-top: 20px;">
-                "The more you learn, the more you realize you know nothing."
-            </p>
+        <div style="text-align: left; margin-top: 20px;">
+          <a href="image/Bidyarthi_Paul_CV.pdf" download
+          style="background: gray; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fa fa-download"></i> Download CV
+          </a>
         </div>
 
+        <p style="font-style: italic; color: whitesmoke; text-align: center; margin-top: 20px;">
+          "The more you learn, the more you realize you know nothing."
+        </p>
+      </div>
 
+      <!-- Recent News Section -->
+      <div id="recent" class="section">
+        <h2>📰 Recent News</h2>
 
-        <!-- Education Section -->
-        <div id="education" class="section">
-            <h2>Education</h2>
-
-            <div style="margin-bottom: 20px;">
-                <strong>Ahsanullah University of Science and Technology</strong><br>
-                Bachelor of Science (B.Sc.) in Computer Science and Engineering<br>
-                Duration: 2020 – 2024<br>
-                CGPA: 3.882/4.00<br>
-                Bachelor Thesis: 
-                <a href="https://github.com/Bidyarthi404/Thesis-Book-PDF/blob/master/Thesis_Defence_BOOK%20(Group_4502).pdf" target="_blank" style="color: #4db8ff;">
-                    Bengali Math Word Problem Solving with Chain of Thought Reasoning
-                </a>
-            </div>
-
-            <div style="margin-bottom: 20px;">
-                <strong>Dhaka Residential Model College</strong><br>
-                Higher Secondary School Certificate<br>
-                Duration: 2017 – 2019<br>
-                GPA: 5.00/5.00
-            </div>
-
-            <div style="margin-bottom: 20px;">
-                <strong>Scholars' School and College</strong><br>
-                Secondary School Certificate<br>
-                Duration: 2015 – 2017<br>
-                GPA: 5.00/5.00
-            </div>
+        <div class="news-item">
+          <span class="news-date">FEB 23, 2025</span>
+          <p class="news-title">Joined as Adjunct Lecturer at Southeast University</p>
+          <p class="news-desc">Teaching C, Algorithm, Digital Logic Design, and Data Communication at the Department of CSE, Tejgaon, Dhaka.</p>
+          <div class="news-tags"><span class="tag">Teaching</span><span class="tag">University</span></div>
         </div>
 
+        <div class="news-item">
+          <span class="news-date">JAN 04, 2025</span>
+          <p class="news-title">Started as Computer Science Teacher at Mastermind School</p>
+          <p class="news-desc">Teaching AI Fundamentals, Python, and Database Systems to O/A-Level students at Mastermind English Medium School, Uttara.</p>
+          <div class="news-tags"><span class="tag">Teaching</span><span class="tag">AI Education</span></div>
+        </div>
 
+        <div class="news-item">
+          <span class="news-date">JAN 01, 2025</span>
+          <p class="news-title">Appointed Research Mentor at A.R.i.S.E.</p>
+          <p class="news-desc">Mentoring undergraduate research on Bengali Hate Speech Detection using BERT and LLM-based models.</p>
+          <div class="news-tags"><span class="tag">Research</span><span class="tag">NLP</span></div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">FEB 2025</span>
+          <p class="news-title">Paper Under Review at PLOS One</p>
+          <p class="news-desc"><em>“ANCHOLIK-NER: A Benchmark Dataset for Bangla Regional Named Entity Recognition.”</em></p>
+          <div class="news-tags"><span class="tag">NLP</span><span class="tag">Dataset</span><span class="tag">Under Review</span></div>
+          <a href="https://doi.org/10.48550/arXiv.2502.11198" class="news-link">→ Read Preprint</a>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">FEB 2025</span>
+          <p class="news-title">Paper Under Review at Natural Language Engineering</p>
+          <p class="news-desc"><em>“BIDWESH: A Bangla Regional Based Hate Speech Detection Dataset.”</em></p>
+          <div class="news-tags"><span class="tag">Hate Speech</span><span class="tag">Dataset</span><span class="tag">Under Review</span></div>
+          <a href="https://arxiv.org/pdf/2507.16183" class="news-link">→ Read Preprint</a>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">JAN 2025</span>
+          <p class="news-title">Paper Published in ACM TALLIP (Q2 Journal)</p>
+          <p class="news-desc"><em>“Leveraging Bengali Math Word Problem Solving with Chain of Thoughts.”</em></p>
+          <div class="news-tags"><span class="tag">ACM</span><span class="tag">NLP</span><span class="tag">Q2 Journal</span></div>
+          <a href="https://doi.org/10.48550/arXiv.2505.21354" class="news-link">→ Read Full Paper</a>
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div id="education" class="section">
+        <h2>Education</h2>
+        <div style="margin-bottom: 20px;">
+          <strong>Ahsanullah University of Science and Technology</strong><br>
+          Bachelor of Science (B.Sc.) in Computer Science and Engineering<br>
+          Duration: 2020 – 2024<br>
+          CGPA: 3.882/4.00<br>
+          Bachelor Thesis: 
+          <a href="https://github.com/Bidyarthi404/Thesis-Book-PDF/blob/master/Thesis_Defence_BOOK%20(Group_4502).pdf" target="_blank" style="color: #4db8ff;">
+            Bengali Math Word Problem Solving with Chain of Thought Reasoning
+          </a>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <strong>Dhaka Residential Model College</strong><br>
+          Higher Secondary School Certificate<br>
+          Duration: 2017 – 2019<br>
+          GPA: 5.00/5.00
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <strong>Scholars' School and College</strong><br>
+          Secondary School Certificate<br>
+          Duration: 2015 – 2017<br>
+          GPA: 5.00/5.00
+        </div>
+      </div>
 
       <!-- Experience Section -->
       <div id="experience" class="section">
         <h2>Experience</h2>
-        <p>
-          <strong>Adjunct Lecturer</strong><br>
-          Southeast University<br>
-          2022 - Present
-        </p>
-        <p>
-          <strong>Research Assistant</strong><br>
-          NLP Research Lab, Southeast University<br>
-          2020 - 2022
-        </p>
+        <p><strong>Adjunct Lecturer</strong><br>Southeast University<br>2025 - Present</p>
+        <p><strong>Computer Science Teacher</strong><br>Mastermind English Medium School<br>2025 - Present</p>
+        <p><strong>Research Mentor</strong><br>Articulated Research Institute for Scientific Excellence<br>2025 - Present</p>
+        <p><strong>Research Assistant</strong><br>Articulated Research Institute for Scientific Excellence<br>2024</p>
       </div>
 
       <!-- Research Section -->
       <div id="research" class="section">
         <h2>Research</h2>
-        <p>
-          My research focuses on Natural Language Processing, with particular interest in:
-        </p>
         <ul>
-          <li>Sentiment Analysis in Low-Resource Languages</li>
-          <li>Machine Translation for Bengali and Related Languages</li>
-          <li>AI Ethics and Bias Mitigation in Language Models</li>
-          <li>Multimodal Learning for Enhanced NLP Applications</li>
+          <li>Natural Language Processing (NLP)</li>
+          <li>Bangla Mathematical Reasoning</li>
+          <li>Regional Dialect Analysis</li>
+          <li>Low Resource Languages</li>
+          <li>LLMs & Multimodal Learning</li>
         </ul>
       </div>
 
       <!-- Achievements Section -->
       <div id="achievements" class="section">
         <h2>Achievements</h2>
-        <p>
-          <strong>Best Paper Award</strong><br>
-          International Conference on NLP (2022)
-        </p>
-        <p>
-          <strong>Research Grant Recipient</strong><br>
-          National Science Foundation (2021)
-        </p>
-        <p>
-          <strong>Outstanding Teaching Assistant</strong><br>
-          Southeast University (2020)
-        </p>
+        <p><strong>Best Paper Award</strong><br>International Conference on NLP (2022)</p>
+        <p><strong>Research Grant Recipient</strong><br>National Science Foundation (2021)</p>
+        <p><strong>Outstanding Teaching Assistant</strong><br>Southeast University (2020)</p>
       </div>
     </div>
   </div>
 
   <script>
-    // Function to show the selected section and hide others
     function showSection(sectionId) {
-      // Hide all sections
       const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      
-      // Show the selected section
+      sections.forEach(s => s.classList.remove('active'));
       document.getElementById(sectionId).classList.add('active');
     }
   </script>
