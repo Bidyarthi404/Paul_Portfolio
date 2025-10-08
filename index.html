@@ -189,65 +189,52 @@
     }
 
     #recent {
-    padding: 40px 60px;
-    background: linear-gradient(135deg, rgba(10, 50, 10, 0.3), rgba(20, 80, 20, 0.2));
-    border-radius: 16px;
-    backdrop-filter: blur(20px);
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
+    padding: 50px 0;
+    text-align: center;
+    background: transparent;
     }
 
     #recent h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: #d9ffdc;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 40px;
     }
 
     .news-card {
-    background: rgba(0, 128, 0, 0.2);
-    border: 1px solid rgba(0, 255, 0, 0.25);
-    border-left: 4px solid rgba(0, 255, 128, 0.6);
-    border-radius: 14px;
-    padding: 20px 28px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0 4px 15px rgba(0, 255, 128, 0.08);
-    transition: all 0.3s ease;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1); /* frosted glass */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .news-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 25px rgba(0, 255, 128, 0.25);
-    background: rgba(0, 128, 0, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
     }
 
     .news-date {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #baffc3;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 4px 10px;
-    border-radius: 8px;
-    display: inline-block;
+    font-size: 0.9rem;
+    opacity: 0.8;
     margin-bottom: 8px;
     }
 
     .news-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
     }
 
     .news-card p {
-    font-size: 0.95rem;
-    color: #e5ffe8;
+    font-size: 1rem;
     line-height: 1.6;
     }
+
 
 
     /* Responsive design */
@@ -290,7 +277,7 @@
   <nav class="dashboard">
     <div class="logo" onclick="showSection('home')">Bidyarthi Paul</div>
     <div class="nav-links">
-      <a href="#" onclick="showSection('recent')">Recent</a>
+      <a href="#" onclick="showSection('recent')">Recent News</a>
       <a href="#" onclick="showSection('education')">Education</a>
       <a href="#" onclick="showSection('experience')">Experience</a>
       <a href="#" onclick="showSection('research')">Research</a>
@@ -344,54 +331,45 @@
       </div>
 
       <!-- Recent News Section -->
-      <div id="recent" class="section">
-        <h2>📰 Recent News</h2>
+      <section id="recent" class="section">
+        <h2>🗞️ Recent News</h2>
 
-        <div class="news-item">
-          <span class="news-date">FEB 23, 2025</span>
-          <p class="news-title">Joined as Adjunct Lecturer at Southeast University</p>
-          <p class="news-desc">Teaching C, Algorithm, Digital Logic Design, and Data Communication at the Department of CSE, Tejgaon, Dhaka.</p>
-          <div class="news-tags"><span class="tag">Teaching</span><span class="tag">University</span></div>
+        <!-- News Item 1 -->
+        <div class="news-card">
+            <div class="news-date">February 23, 2025</div>
+            <h3>Joined Southeast University</h3>
+            <p>Started as an <strong>Adjunct Lecturer</strong> at Southeast University, teaching courses on C, Algorithms, Digital Logic Design, and Data Communication.</p>
         </div>
 
-        <div class="news-item">
-          <span class="news-date">JAN 04, 2025</span>
-          <p class="news-title">Started as Computer Science Teacher at Mastermind School</p>
-          <p class="news-desc">Teaching AI Fundamentals, Python, and Database Systems to O/A-Level students at Mastermind English Medium School, Uttara.</p>
-          <div class="news-tags"><span class="tag">Teaching</span><span class="tag">AI Education</span></div>
+        <!-- News Item 2 -->
+        <div class="news-card">
+            <div class="news-date">January 4, 2025</div>
+            <h3>Joined Mastermind English Medium School</h3>
+            <p>Began teaching as a <strong>Computer Science Teacher</strong> for AI Fundamentals, Python, and Database courses at the Uttara Campus.</p>
         </div>
 
-        <div class="news-item">
-          <span class="news-date">JAN 01, 2025</span>
-          <p class="news-title">Appointed Research Mentor at A.R.i.S.E.</p>
-          <p class="news-desc">Mentoring undergraduate research on Bengali Hate Speech Detection using BERT and LLM-based models.</p>
-          <div class="news-tags"><span class="tag">Research</span><span class="tag">NLP</span></div>
+        <!-- News Item 3 -->
+        <div class="news-card">
+            <div class="news-date">January 1, 2025</div>
+            <h3>Appointed as Research Mentor at A.R.i.S.E.</h3>
+            <p>Leading the development of a <strong>Bengali Regional Hate Speech Dataset</strong> and model evaluation using BERT-based and LLM architectures.</p>
         </div>
 
-        <div class="news-item">
-          <span class="news-date">FEB 2025</span>
-          <p class="news-title">Paper Under Review at PLOS One</p>
-          <p class="news-desc"><em>“ANCHOLIK-NER: A Benchmark Dataset for Bangla Regional Named Entity Recognition.”</em></p>
-          <div class="news-tags"><span class="tag">NLP</span><span class="tag">Dataset</span><span class="tag">Under Review</span></div>
-          <a href="https://doi.org/10.48550/arXiv.2502.11198" class="news-link">→ Read Preprint</a>
+        <!-- News Item 4 -->
+        <div class="news-card">
+            <div class="news-date">May 2025</div>
+            <h3>Paper Accepted in ACM TALLIP</h3>
+            <p><em>“Leveraging Bengali Math Word Problem Solving with Chain of Thoughts”</em> published in <strong>ACM Transactions on Asian and Low-Resource Language Information Processing (Q2)</strong>.</p>
         </div>
 
-        <div class="news-item">
-          <span class="news-date">FEB 2025</span>
-          <p class="news-title">Paper Under Review at Natural Language Engineering</p>
-          <p class="news-desc"><em>“BIDWESH: A Bangla Regional Based Hate Speech Detection Dataset.”</em></p>
-          <div class="news-tags"><span class="tag">Hate Speech</span><span class="tag">Dataset</span><span class="tag">Under Review</span></div>
-          <a href="https://arxiv.org/pdf/2507.16183" class="news-link">→ Read Preprint</a>
+        <!-- News Item 5 -->
+        <div class="news-card">
+            <div class="news-date">February 2025</div>
+            <h3>ANCHOLIK-NER Submitted to PLOS One</h3>
+            <p>Submitted <em>ANCHOLIK-NER: A Benchmark Dataset for Bangla Regional Named Entity Recognition</em> — under review at <strong>PLOS One</strong>.</p>
         </div>
+        </section>
 
-        <div class="news-item">
-          <span class="news-date">JAN 2025</span>
-          <p class="news-title">Paper Published in ACM TALLIP (Q2 Journal)</p>
-          <p class="news-desc"><em>“Leveraging Bengali Math Word Problem Solving with Chain of Thoughts.”</em></p>
-          <div class="news-tags"><span class="tag">ACM</span><span class="tag">NLP</span><span class="tag">Q2 Journal</span></div>
-          <a href="https://doi.org/10.48550/arXiv.2505.21354" class="news-link">→ Read Full Paper</a>
-        </div>
-      </div>
 
       <!-- Education Section -->
       <div id="education" class="section">
