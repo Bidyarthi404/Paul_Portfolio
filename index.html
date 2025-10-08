@@ -13,11 +13,17 @@
 
   <!-- CSS -->
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       background-image: url('image/stacked-peaks.svg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -26,51 +32,103 @@
       color: white;
     }
 
+    /* Navigation Dashboard */
+    .dashboard {
+      background: rgba(0, 40, 30, 0.9);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: #4db8ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Main content container */
+    .content-container {
+      display: flex;
+      flex: 1;
+      padding: 40px 0;
+    }
+
     /* Profile Card */
     .profile-card {
-    background: rgba(0, 40, 30, 0.85);
-    color: white;
-    width: 320px;              /* Increased from 260px */
-    border-radius: 24px;       /* Slightly more rounded */
-    padding: 40px 25px;        /* Increased padding */
-    text-align: center;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
-    margin-left: 60px;
+      background: rgba(0, 40, 30, 0.85);
+      color: white;
+      width: 320px;
+      border-radius: 24px;
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+      margin-left: 60px;
+      height: fit-content;
     }
 
     /* Profile Image */
     .profile-img {
-    width: 200px;              /* Increased from 100px */
-    height: 200px;             /* Increased from 100px */
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;   /* Slightly thicker border */
-    margin-bottom: 20px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 20px;
     }
 
     /* Name Styling */
     .name {
-    margin: 8px 0 0;
-    font-size: 30px;           /* Slightly larger text */
-    font-weight: 600;
+      margin: 8px 0 0;
+      font-size: 30px;
+      font-weight: 600;
     }
 
     .native-name {
-    margin: 2px 0 0;
-    font-size: 18px;           /* Slightly larger */
-    font-weight: 500;
+      margin: 2px 0 0;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     .role {
-    font-size: 18px;
-    margin-top: 8px;
-    color: white;
+      font-size: 18px;
+      margin-top: 8px;
+      color: white;
     }
 
     .org {
-    font-size: 15px;
-    margin-top: 1px;
-    color: white;
+      font-size: 15px;
+      margin-top: 1px;
+      color: white;
     }
 
     .social-icons {
@@ -78,10 +136,11 @@
         gap: 15px;
         justify-content: center;
         align-items: center;
+        margin-top: 20px;
     }
 
     .social-icons a {
-        color: white; /* icon color */
+        color: white;
         font-size: 20px;
         text-decoration: none;
         transition: transform 0.2s ease;
@@ -90,8 +149,6 @@
     .social-icons a:hover {
         transform: scale(1.2);
     }
-
-
 
     /* Main content beside the card */
     .main-content {
@@ -109,64 +166,213 @@
       line-height: 1.6;
       color: #f2f2f2;
     }
+
+    /* Section styling */
+    .section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: white;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 8px;
+    }
+
+    .section p {
+      margin-bottom: 15px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 900px) {
+      .content-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .profile-card {
+        margin-left: 0;
+        margin-bottom: 40px;
+      }
+      
+      .main-content {
+        margin-left: 0;
+        padding: 0 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dashboard {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-links {
+        gap: 15px;
+      }
+      
+      .nav-links a {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Left Profile Card -->
-  <div class="profile-card">
-    <img src="image/paul.jpg" alt="Profile Photo" class="profile-img">
+  <!-- Navigation Dashboard -->
+  <nav class="dashboard">
+    <div class="logo" onclick="showSection('home')">Bidyarthi Paul</div>
+    <div class="nav-links">
+      <a href="#" onclick="showSection('about')">About</a>
+      <a href="#" onclick="showSection('education')">Education</a>
+      <a href="#" onclick="showSection('experience')">Experience</a>
+      <a href="#" onclick="showSection('research')">Research</a>
+      <a href="#" onclick="showSection('achievements')">Achievements</a>
+    </div>
+  </nav>
 
-    <h3 class="name">Bidyarthi Paul</h3>
-    <h4 class="native-name">বিদ্যার্থী পাল</h4>
-    <p class="role">NLP researcher | Adjunct Lecturer</p>
-    <p class="org">Southeast University</p>
+  <!-- Main Content Container -->
+  <div class="content-container">
+    <!-- Left Profile Card -->
+    <div class="profile-card">
+      <img src="image/paul.jpg" alt="Profile Photo" class="profile-img">
+      <h3 class="name">Bidyarthi Paul</h3>
+      <h4 class="native-name">বিদ্যার্থী পাল</h4>
+      <p class="role">NLP researcher | Adjunct Lecturer</p>
+      <p class="org">Southeast University</p>
 
-    <div class="social-icons">
+      <div class="social-icons">
         <a href="mailto:youremail@example.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
+          <i class="fa-solid fa-envelope"></i>
         </a>
-
         <a href="tel:+8801970307986" target="_blank">
-            <i class="fa-solid fa-phone"></i>
+          <i class="fa-solid fa-phone"></i>
         </a>
-
         <a href="https://github.com/Bidyarthi404" target="_blank">
-            <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-github"></i>
         </a>
-
         <a href="https://www.linkedin.com/in/bidyarthi-paul" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-linkedin"></i>
         </a>
-
         <a href="https://orcid.org/0009-0003-5892-5786" target="_blank">
-            <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user"></i>
         </a>
-
         <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" target="_blank">
-            <i class="fa-solid fa-graduation-cap"></i>
+          <i class="fa-solid fa-graduation-cap"></i>
         </a>
-
         <a href="https://scholar.google.com/citations?user=your-google-scholar-id" target="_blank">
-            <i class="fa-brands fa-google"></i>
+          <i class="fa-brands fa-google"></i>
         </a>
-
         <a href="https://www.scopus.com/authid/detail.uri?authorId=your-scopus-id" target="_blank">
-            <i class="fa-solid fa-chart-line"></i>
+          <i class="fa-solid fa-chart-line"></i>
         </a>
+      </div>
     </div>
 
+    <!-- Main Page Content -->
+    <div class="main-content">
+      <!-- Home Section -->
+      <div id="home" class="section active">
+        <h1>Welcome to My Portfolio</h1>
+        <p>
+          Hello! I'm Bidyarthi Paul, a Computer Science researcher passionate about
+          AI, NLP, and data-driven innovation. This portfolio showcases my projects,
+          publications, and experiments with intelligent systems.
+        </p>
+      </div>
 
+      <!-- About Section -->
+      <div id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+          I am a dedicated researcher and educator with a focus on Natural Language Processing and Artificial Intelligence. My work explores the intersection of language, technology, and human-computer interaction.
+        </p>
+        <p>
+          With a background in Computer Science and a passion for innovation, I strive to develop solutions that bridge the gap between theoretical research and practical applications.
+        </p>
+      </div>
+
+      <!-- Education Section -->
+      <div id="education" class="section">
+        <h2>Education</h2>
+        <p>
+          <strong>Master of Science in Computer Science</strong><br>
+          Southeast University<br>
+          2020 - 2022
+        </p>
+        <p>
+          <strong>Bachelor of Science in Computer Science</strong><br>
+          Southeast University<br>
+          2016 - 2020
+        </p>
+      </div>
+
+      <!-- Experience Section -->
+      <div id="experience" class="section">
+        <h2>Experience</h2>
+        <p>
+          <strong>Adjunct Lecturer</strong><br>
+          Southeast University<br>
+          2022 - Present
+        </p>
+        <p>
+          <strong>Research Assistant</strong><br>
+          NLP Research Lab, Southeast University<br>
+          2020 - 2022
+        </p>
+      </div>
+
+      <!-- Research Section -->
+      <div id="research" class="section">
+        <h2>Research</h2>
+        <p>
+          My research focuses on Natural Language Processing, with particular interest in:
+        </p>
+        <ul>
+          <li>Sentiment Analysis in Low-Resource Languages</li>
+          <li>Machine Translation for Bengali and Related Languages</li>
+          <li>AI Ethics and Bias Mitigation in Language Models</li>
+          <li>Multimodal Learning for Enhanced NLP Applications</li>
+        </ul>
+      </div>
+
+      <!-- Achievements Section -->
+      <div id="achievements" class="section">
+        <h2>Achievements</h2>
+        <p>
+          <strong>Best Paper Award</strong><br>
+          International Conference on NLP (2022)
+        </p>
+        <p>
+          <strong>Research Grant Recipient</strong><br>
+          National Science Foundation (2021)
+        </p>
+        <p>
+          <strong>Outstanding Teaching Assistant</strong><br>
+          Southeast University (2020)
+        </p>
+      </div>
+    </div>
   </div>
 
-  <!-- Main Page Content -->
-  <div class="main-content">
-    <h1>Welcome to My Portfolio</h1>
-    <p>
-      Hello! I’m Bidyarthi Paul, a Computer Science researcher passionate about
-      AI, NLP, and data-driven innovation. This portfolio showcases my projects,
-      publications, and experiments with intelligent systems.
-    </p>
-  </div>
+  <script>
+    // Function to show the selected section and hide others
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show the selected section
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
