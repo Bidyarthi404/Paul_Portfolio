@@ -1,204 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bidyarthi Paul | AI Researcher & Lecturer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bidyarthi Paul — Portfolio</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background-color: #f9fafc;
-      color: #333;
-      line-height: 1.6;
+    :root{
+      --bg:#e8f3ef;
+      --card1:#073d2b;
+      --card2:#0e5f44;
+      --accent:#bff2d7;
+      --muted:rgba(255,255,255,0.85);
+      --glass: rgba(255,255,255,0.06);
+      --shadow: 0 10px 30px rgba(6,20,14,0.45);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:#06311f;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px;
     }
 
-    header {
-      background: #0d1117;
-      color: #fff;
-      padding: 2rem 0;
-      text-align: center;
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+    /* main hero card */
+    .hero{
+      background: linear-gradient(160deg,var(--card1), var(--card2));
+      border-radius: var(--radius);
+      padding:34px;
+      color:white;
+      position:relative;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.04);
     }
 
-    header p {
-      color: #aaa;
-      font-size: 1.1rem;
+    /* decorative low-poly overlays */
+    .hero::before, .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      mix-blend-mode:overlay;
+      opacity:0.25;
+    }
+    .hero::before{
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 30%),
+        linear-gradient(60deg, rgba(0,0,0,0.06), rgba(0,0,0,0));
+      clip-path: polygon(0 0, 60% 0, 30% 100%, 0% 100%);
+      transform: scale(1.4) rotate(6deg);
+    }
+    .hero::after{
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 40%),
+        linear-gradient(200deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
+      clip-path: polygon(40% 0, 100% 0, 100% 70%, 70% 100%, 40% 100%);
+      transform: scale(1.06) rotate(-6deg);
     }
 
-    nav {
-      background: #161b22;
-      text-align: center;
-      padding: 0.6rem;
+    /* two-column layout */
+    .layout{
+      display:flex;
+      gap:28px;
+      align-items:flex-start;
+      position:relative;
+      z-index:2;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
+    /* left column (avatar + socials) */
+    .left{
+      width:280px;
+      text-align:center;
+    }
+    .avatar{
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      object-fit:cover;
+      display:inline-block;
+      border:6px solid rgba(255,255,255,0.14);
+      box-shadow: 0 8px 26px rgba(3,18,12,0.5);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+    }
+    .name{
+      margin-top:12px;
+      font-size:1.15rem;
+      font-weight:700;
+      line-height:1.1;
+    }
+    .title{
+      margin-top:6px;
+      font-size:0.92rem;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .socials{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .socials a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:36px;
+      width:36px;
+      border-radius:8px;
+      background:var(--glass);
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,0.03);
     }
 
-    nav a:hover {
-      color: #58a6ff;
+    /* right column (content) */
+    .right{flex:1;}
+    .row-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:20px;
+    }
+    .about-title{
+      font-size:1.4rem;
+      font-weight:700;
+      margin:0 0 10px 0;
+    }
+    .about{
+      color:var(--muted);
+      font-size:0.98rem;
+      line-height:1.6;
+      max-width:100%;
     }
 
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+    .btn-download{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:10px;
+      background:rgba(255,255,255,0.08);
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.08);
+      text-decoration:none;
+      font-weight:600;
+      margin-top:14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+    .btn-download svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35));}
+
+    /* two-column grid inside right: Interests & Education */
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .card{
+      background: rgba(255,255,255,0.03);
+      padding:16px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .card h4{
+      margin:0 0 10px 0;
+      font-size:1rem;
+      font-weight:700;
+    }
+    .card ul{margin:0; padding-left:18px; color:var(--muted); font-size:0.95rem; line-height:1.6}
+    .edu-item{margin-bottom:8px; color:var(--muted); font-size:0.95rem}
+    .meta{font-size:0.86rem; color:rgba(255,255,255,0.6); margin-top:6px}
+
+    /* responsive */
+    @media (max-width:920px){
+      .layout{flex-direction:column; align-items:center;}
+      .left{width:100%;}
+      .grid{grid-template-columns:1fr;}
+      .hero{padding:22px;}
+      body{padding:20px;}
     }
 
-    h2 {
-      border-bottom: 2px solid #eaeaea;
-      padding-bottom: 5px;
-      color: #0366d6;
-    }
-
-    .project, .publication, .experience, .dataset {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1.5rem;
-    }
-
-    .project h3, .publication h3, .experience h3, .dataset h3 {
-      margin-top: 0;
-    }
-
-    footer {
-      text-align: center;
-      background: #0d1117;
-      color: #ccc;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
+    /* small helper styles for icons/text inside the card */
+    .small-muted{font-size:0.92rem; color:var(--muted)}
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Bidyarthi Paul</h1>
-    <p>AI Researcher | Lecturer | Data Scientist</p>
-    <p>
-      📧 <a href="mailto:bidyarthipaul01@gmail.com" style="color:#58a6ff;">bidyarthipaul01@gmail.com</a> |
-      📞 +8801970307986
-    </p>
-    <p>
-      <a href="https://github.com/Bidyarthi404" style="color:#58a6ff;">GitHub</a> |
-      <a href="https://www.linkedin.com/in/bidyarthi-paul" style="color:#58a6ff;">LinkedIn</a> |
-      <a href="https://orcid.org/0009-0003-5892-5786" style="color:#58a6ff;">ORCID</a> |
-      <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" style="color:#58a6ff;">ResearchGate</a>
-    </p>
-  </header>
+  <div class="wrap">
+    <div class="hero">
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#datasets">Datasets</a>
-    <a href="#contact">Contact</a>
-  </nav>
+      <div class="layout">
+        <!-- LEFT: Avatar + links -->
+        <div class="left">
+          <!-- replace profile.jpg with your image -->
+          <img src="profile.jpg" alt="Bidyarthi Paul" class="avatar" />
+          <div class="name">Bidyarthi Paul</div>
+          <div class="title">AI Researcher • Lecturer</div>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am an AI researcher and educator passionate about advancing Natural Language Processing (NLP), Large Language Models (LLMs), and low-resource language understanding. 
-      I currently teach and mentor in academia while developing datasets and frameworks that empower Bengali AI research.
-    </p>
-    <p><strong>Education:</strong> B.Sc. in Computer Science and Engineering, Ahsanullah University of Science and Technology (CGPA: 3.88/4.00)</p>
-  </section>
+          <div class="socials" aria-label="social links">
+            <a href="https://github.com/Bidyarthi404" target="_blank" title="GitHub">GH</a>
+            <a href="https://www.linkedin.com/in/bidyarthi-paul" target="_blank" title="LinkedIn">in</a>
+            <a href="https://orcid.org/0009-0003-5892-5786" target="_blank" title="ORCID">iD</a>
+            <a href="https://www.researchgate.net/profile/Bidyarthi-Paul?ev=hdr_xprf" target="_blank" title="ResearchGate">RG</a>
+          </div>
+        </div>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
+        <!-- RIGHT: About + button + two-column details -->
+        <div class="right">
+          <div class="row-top">
+            <div>
+              <div class="about-title">About Me</div>
+              <div class="about">
+                I am an AI researcher and educator specializing in Natural Language Processing (NLP), Bangla mathematical reasoning, regional dialects, and low-resource language modeling. I create datasets and models to empower Bengali AI research and teach undergraduate courses in programming and AI.
+              </div>
+            </div>
 
-    <div class="experience">
-      <h3>Adjunct Lecturer</h3>
-      <p><strong>Southeast University</strong> — Feb 2025 – Present</p>
-      <p>Courses: C, Algorithm, Digital Logic Design, Data Communication</p>
-    </div>
+            <!-- Download CV -->
+            <div>
+              <!-- Put your CV file in the repo root named "Bidyarthi_Paul_CV.pdf" -->
+              <a class="btn-download" href="Bidyarthi_Paul_CV.pdf" download>
+                <!-- mini download icon (svg) -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M12 3v11" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 11l4 4 4-4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 21H3" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download CV
+              </a>
 
-    <div class="experience">
-      <h3>Computer Science Teacher</h3>
-      <p><strong>Mastermind English Medium School</strong> — Jan 2025 – Present</p>
-      <p>Courses: AI Fundamentals, Python, Database</p>
-    </div>
+              <div class="meta">AUST — B.Sc. in CSE (CGPA: 3.882/4.00)</div>
+            </div>
+          </div>
 
-    <div class="experience">
-      <h3>Research Mentor</h3>
-      <p><strong>A.R.i.S.E., Dhaka</strong> — Jan 2025 – Present</p>
-      <p>Leading NLP research on regional language modeling and dataset creation for Bengali hate speech detection and NER.</p>
-    </div>
-  </section>
+          <!-- Interests & Education -->
+          <div class="grid" aria-hidden="false">
+            <div class="card">
+              <h4>Interests</h4>
+              <ul>
+                <li>Natural Language Processing (NLP)</li>
+                <li>Bangla Mathematical Reasoning & Chain-of-Thought</li>
+                <li>Low-Resource Languages & Regional Dialects</li>
+                <li>Large Language Models (LLMs) & Vision-Language Models (VLMs)</li>
+                <li>Deep Learning & Machine Learning</li>
+              </ul>
+            </div>
 
-  <section id="research">
-    <h2>Research Interests</h2>
-    <p>
-      Natural Language Processing (NLP), Bangla Mathematical Reasoning, Regional Dialects, Low-Resource Languages, 
-      Large Language Models (LLMs), Vision-Language Models (VLMs), Machine Learning, Deep Learning.
-    </p>
-  </section>
+            <div class="card">
+              <h4>Education</h4>
+              <div class="edu-item"><strong>B.Sc. in Computer Science & Engineering</strong><br><span class="small-muted">Ahsanullah University of Science and Technology — 2020–2024 • CGPA: 3.882/4.00</span></div>
+              <div class="edu-item"><strong>Higher Secondary School Certificate</strong><br><span class="small-muted">Dhaka Residential Model College — GPA: 5.00/5.00</span></div>
+              <div class="edu-item"><strong>Secondary School Certificate</strong><br><span class="small-muted">Scholars' School & College — GPA: 5.00/5.00</span></div>
+            </div>
+          </div>
 
-  <section id="publications">
-    <h2>Selected Publications</h2>
+          <!-- optional short publications / datasets line -->
+          <div style="margin-top:18px; color:rgba(255,255,255,0.9); font-size:0.95rem">
+            <strong>Selected publications:</strong> <span class="small-muted">ACM TALLIP (2025) — Bengali math MWP chain-of-thought; IEEE COMPAS (2024) — Bangla dialect detection.</span>
+          </div>
+        </div>
+      </div><!-- /.layout -->
 
-    <div class="publication">
-      <h3>Leveraging Bengali Math Word Problem Solving with Chain of Thoughts</h3>
-      <p><em>ACM Transactions on Asian and Low-Resource Language Information Processing, 2025</em></p>
-      <a href="https://doi.org/10.48550/arXiv.2505.21354">[DOI]</a>
-    </div>
-
-    <div class="publication">
-      <h3>Improving Bangla Regional Dialect Detection Using BERT, LLMs, and XAI</h3>
-      <p><em>IEEE COMPAS, 2024</em></p>
-      <a href="https://doi.org/10.1109/COMPAS60761.2024.10796843">[DOI]</a>
-    </div>
-
-    <div class="publication">
-      <h3>ANCHOLIK-NER: A Benchmark Dataset for Bangla Regional Named Entity Recognition</h3>
-      <p><em>PLOS One, Under Review (2025)</em></p>
-      <a href="https://doi.org/10.48550/arXiv.2502.11198">[Preprint]</a>
-    </div>
-  </section>
-
-  <section id="datasets">
-    <h2>Datasets</h2>
-
-    <div class="dataset">
-      <h3>ANCHOLIK-NER</h3>
-      <p><a href="https://data.mendeley.com/datasets/gbkszkt8z3/3">Bangla Regional NER Dataset (2024)</a></p>
-    </div>
-
-    <div class="dataset">
-      <h3>BIDWESH</h3>
-      <p><a href="https://data.mendeley.com/datasets/bpkrvf882k/1">Bangla Regional Hate Speech Dataset (2024)</a></p>
-    </div>
-
-    <div class="dataset">
-      <h3>SOMADHAN</h3>
-      <p><a href="https://data.mendeley.com/datasets/34bs5cxk9j/1">Bengali Complex Math Reasoning Dataset (2025)</a></p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:bidyarthipaul01@gmail.com">bidyarthipaul01@gmail.com</a></p>
-    <p>💼 <a href="https://www.linkedin.com/in/bidyarthi-paul">LinkedIn</a> | 🐙 <a href="https://github.com/Bidyarthi404">GitHub</a></p>
-  </section>
-
-  <footer>
-    © 2025 Bidyarthi Paul | Built with ❤️ using <a href="https://pages.github.com/">GitHub Pages</a>
-  </footer>
+    </div><!-- /.hero -->
+  </div><!-- /.wrap -->
 </body>
 </html>
