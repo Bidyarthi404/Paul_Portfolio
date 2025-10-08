@@ -423,6 +423,106 @@
       text-decoration: underline;
     }
 
+    /* Achievements Section Styling */
+    #achievements {
+    padding: 40px 0;
+    }
+
+    #achievements h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    }
+
+    .achievements-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    }
+
+    .achievement-card {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    color: white;
+    }
+
+    .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+    }
+
+    .achievement-icon {
+    background: rgba(77, 184, 255, 0.2);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+    }
+
+    .achievement-icon i {
+    font-size: 24px;
+    color: #4db8ff;
+    }
+
+    .achievement-content {
+    flex: 1;
+    }
+
+    .achievement-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: white;
+    }
+
+    .achievement-date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    color: #4db8ff;
+    font-weight: 600;
+    }
+
+    .achievement-content p:last-child {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+    .achievement-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .achievement-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .achievement-content h3 {
+        font-size: 1.2rem;
+    }
+    }
+
     /* Responsive design */
     @media (max-width: 900px) {
       .content-container {
@@ -745,11 +845,70 @@
 
       <!-- Achievements Section -->
       <div id="achievements" class="section">
-        <h2>Achievements</h2>
-        <p><strong>Best Paper Award</strong><br>International Conference on NLP (2022)</p>
-        <p><strong>Research Grant Recipient</strong><br>National Science Foundation (2021)</p>
-        <p><strong>Outstanding Teaching Assistant</strong><br>Southeast University (2020)</p>
-      </div>
+        <h2>🏆 Achievements & Awards</h2>
+        
+        <div class="achievements-container">
+            <!-- Achievement 1 -->
+            <div class="achievement-card">
+            <div class="achievement-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="achievement-content">
+                <h3>Dean's List of Honor, 2nd Position</h3>
+                <p class="achievement-date">2024</p>
+                <p>Achieved 2nd position in the Dean's List of Honor for outstanding academic performance.</p>
+            </div>
+            </div>
+
+            <!-- Achievement 2 -->
+            <div class="achievement-card">
+            <div class="achievement-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div class="achievement-content">
+                <h3>Research Fund Recipient</h3>
+                <p class="achievement-date">2025</p>
+                <p>Received research fund from Institute of Research & Training (IRT), Southeast University for ANCHOLIK-NER project.</p>
+            </div>
+            </div>
+
+            <!-- Achievement 3 -->
+            <div class="achievement-card">
+            <div class="achievement-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <div class="achievement-content">
+                <h3>Consistent Merit-Based Waivers</h3>
+                <p class="achievement-date">2020 - 2024</p>
+                <p>Received merit-based tuition fee waivers in 1st, 2nd, 3rd, 5th, 6th, and 7th semesters for top academic ranking in CSE Department.</p>
+            </div>
+            </div>
+
+            <!-- Achievement 4 -->
+            <div class="achievement-card">
+            <div class="achievement-icon">
+                <i class="fas fa-medal"></i>
+            </div>
+            <div class="achievement-content">
+                <h3>Science Fair 2nd Runners Up</h3>
+                <p class="achievement-date">2016</p>
+                <p>Secured 2nd runners up position in Scholars' School and College Science Fair.</p>
+            </div>
+            </div>
+
+            <!-- Achievement 5 -->
+            <div class="achievement-card">
+            <div class="achievement-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="achievement-content">
+                <h3>General Scholarship (JSC)</h3>
+                <p class="achievement-date">2014</p>
+                <p>Awarded General Scholarship in Junior School Certificate examination.</p>
+            </div>
+            </div>
+        </div>
+        </div>
     </div>
   </div>
 
